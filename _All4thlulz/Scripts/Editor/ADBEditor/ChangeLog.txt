@@ -1,0 +1,73 @@
+
+0.7.5
+- Added pumkin avatar tools dependecy check
+
+0.7.4 (First Release On GitHub)
+- Added scale correction when copying (radius, end offset, gravity, force) to a new dynamic bone
+- When creating a missing gameobject during dynamic bone collider copy, it will also attempt to recreate any missing parent hierarchy for it to be childed correctly
+- Fixed model scale being falsely detected as a mismatch due to floating point accuracy
+- Fixed scale correction multiplier falsely detecting a mismatch due to floating point accuracy
+- Output log is now categorised for both easier readability and to help avoid gui text length limitations
+- Output log will now automatically expand categories that contain errors
+- Added basic pumkin tools v0.4b integration. You must have the tool downloaded before enabling integration from the script
+
+0.7.3
+- Fixed dynamic bone collider radius and height being incorrect if the imported scales and local scales for each reference gameobject do not match
+- Copying a dynamic bone collider without a parent reference should now log an error
+
+0.7.2
+- Fixed open output log button not becoming active due to the last outputlog not correctly saving
+- Fixed output log window not expanding when loading from the pref saved outputlog 
+- Always switch reference for root gameobject now defaults to false. (so it actually displays for new users)
+
+0.7.1
+- User settings are now saved and should no longer revert to default when the window or editor is closed
+- Fixed null reference exception  when an exclusion reference is missing during copy
+- Fixed an issue where the newModel scale could end up incorrect when undo is used in some cases
+- Added check for references being the root gameobject. (help new users due to EDB expecting the armature but ADB can use anything)
+
+0.7.0
+- Added the ability to remove empty dynamic bone collider and exclusion references. (Enabled in settings by default)
+- Added check for existing dynamic bones that reference the same root. Output logging only for now
+- Added check for existing dynamic bone colliders. Output logging only for now
+- Copying output log to clipboard no longer closes the window
+- Fixed an issue where root skip count was never getting incremented
+
+Change log:
+0.6.1
+- Reduced outputlog lines for multi line debug logs
+- Reduced outputlog text size
+- Fixed output log exceeding screen height
+
+0.6.0
+- Fixed transform position and rotation mismatch from affecting dynamic bone collider copying successfuly
+- Removed position and rotation transform mismatch check
+- Reduced ask to save spam
+- Added settings tab
+- Added simple outputlog
+- Added dubug and save toggles
+- Added transform mismatch settings
+
+0.5.3
+- Added alert for duplicate gameobject names when copying exclusion references
+- Fixed transform matching not being detected (known issue: scale may be incorrectly detected as wrong)
+- Changed script id so you can now run EDBP and ADBP in the same project
+
+0.5.2
+- Fixed null reference excepction when a collider reference is missing during copy
+- Fixed FixReferences parent reference getting replaced when not necessary
+
+0.5.1
+- Added advanced copy (bypasses some armature checks so that the user can manually copy if they know what they are doing)
+- Require both references before a copy can proceed
+- Fixed dynamic bone collider copy failing if the gameobject does not exist on the new model
+- Fixed dynamic bone components not being copied if multiple exist on one gameobject
+- Fixed dynamic bone root not referencing the correct gameobject
+- Added failsafe situations for references that can utilise the reference fixer when the user has dealt with any errors
+- Added separate copy buttons
+- Added log messages to help if something goes wrong
+- Added undo support for newly created gameobjects and components
+- Added transform matching for specific use cases that may need it
+- Added ask user to save changes
+- Added FixReferences.cs code to ADBCopy
+
