@@ -1,4 +1,4 @@
-# AdvancedDynamicBoneEditor
+# AdvancedDynamicBoneCopyEditor
 A Unity editor script for vrchat avatar creators that supports more use cases when copying dynamic bone components to a new model or automatically fixing references on manual copies.
 
 Tool Screenshot: [Imgur Link](https://imgur.com/yHUG9pw) (Beta v0.7.3)
